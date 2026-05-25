@@ -319,7 +319,7 @@ export class FlightSearchComponent implements OnInit {
     const fromCode = this.from.split('(')[1]?.replace(')', '').trim();
     const toCode = this.to.split('(')[1]?.replace(')', '').trim();
 
-    const departureUrl = `http://localhost:5000/api/flights?from=${fromCode}&to=${toCode}&date=${this.departureDate}`;
+    const departureUrl = `http://localhost:5128/api/flights?from=${fromCode}&to=${toCode}&date=${this.departureDate}`;
 
     this.http.get<any[]>(departureUrl).subscribe(data => {
 
@@ -382,7 +382,7 @@ export class FlightSearchComponent implements OnInit {
       // ✅ If round trip → fetch return flights
       if (this.tripType === 'round' && this.returnDate) {
 
-        const returnUrl = `http://localhost:5000/api/flights?from=${toCode}&to=${fromCode}&date=${this.returnDate}`;
+        const returnUrl = `http://localhost:5128/api/flights?from=${toCode}&to=${fromCode}&date=${this.returnDate}`;
 
         this.http.get<any[]>(returnUrl).subscribe(returnData => {
 

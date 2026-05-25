@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "stHXaaAI/HmWWaPiSWXX16e/J6O0ib8Oo8h9xbv/lL4=",
+  "Source": "flysphere-backend-dotnet",
+  "BasePath": "_content/flysphere-backend-dotnet",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

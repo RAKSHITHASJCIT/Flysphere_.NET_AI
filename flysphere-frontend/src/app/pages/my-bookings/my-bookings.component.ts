@@ -95,7 +95,7 @@ export class MyBookingsComponent implements OnInit {
 
   // ✅ Download ticket PDF (force browser navigation)
   downloadTicket(bookingId: string): void {
-    const url = `http://localhost:5000/api/tickets/${bookingId}/pdf`;
+    const url = `http://localhost:5128/api/tickets/${bookingId}/pdf`;
 
     // Force browser to navigate to file (guaranteed request)
     window.location.href = url;

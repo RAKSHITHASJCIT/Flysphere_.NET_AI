@@ -588,7 +588,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   loadStats() {
 
     /* ✅ Fetch Flights Data */
-    this.http.get<any[]>('http://localhost:5000/api/flights')
+this.http.get<any[]>('http://localhost:5128/api/flights')
       .subscribe(data => {
 
         // ✅ Normalize camelCase response like flights-list
@@ -711,7 +711,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       });
 
     /* ✅ Fetch All Bookings Count (User Side) */
-    this.http.get<any[]>('http://localhost:5000/api/bookings')
+this.http.get<any[]>('http://localhost:5128/api/bookings')
       .subscribe(bookings => {
         this.bookingCount = bookings.length;
         this.cdr.detectChanges();

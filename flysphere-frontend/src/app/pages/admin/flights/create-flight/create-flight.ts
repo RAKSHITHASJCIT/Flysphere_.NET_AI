@@ -357,7 +357,18 @@ export class CreateFlight {
       firstChildFare: FirstChildFare
     };
 
-    this.http.post('http://localhost:5000/api/flights', payload)
+const user = JSON.parse(localStorage.getItem('user') || '{}');
+const token = user?.token;
+
+this.http.post(
+  'http://localhost:5128/api/flights',
+  payload,
+  {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+)
       .subscribe({
         next: () => {
 

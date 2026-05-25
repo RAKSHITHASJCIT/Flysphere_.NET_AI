@@ -1,0 +1,6 @@
+@flysphere_backend_dotnet_HostAddress = http://localhost:5128
+
+GET {{flysphere_backend_dotnet_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

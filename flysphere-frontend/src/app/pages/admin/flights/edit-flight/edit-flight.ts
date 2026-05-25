@@ -31,7 +31,7 @@ export class EditFlight implements OnInit {
   }
 
   loadFlight() {
-    this.http.get<any>(`http://localhost:5000/api/flights/${this.flightId}`)
+this.http.get<any>(`http://localhost:5128/api/flights/${this.flightId}`)
       .subscribe(response => {
 
         console.log('Edit flight API response:', response);
@@ -156,7 +156,18 @@ export class EditFlight implements OnInit {
         flightStatus: 'Scheduled'
       };
 
-    this.http.put(`http://localhost:5000/api/flights/${this.flightId}`, payload)
+const user = JSON.parse(localStorage.getItem('user') || '{}');
+const token = user?.token;
+
+this.http.put(
+  `http://localhost:5128/api/flights/${this.flightId}`,
+  payload,
+  {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+)
       .subscribe({
         next: () => {
           alert('Flight updated successfully');

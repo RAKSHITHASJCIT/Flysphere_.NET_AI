@@ -107,7 +107,7 @@ export class FlightsList implements OnInit, OnDestroy {
   removeFlight(id: number) {
     if (!confirm('Are you sure you want to permanently remove this flight?')) return;
 
-    this.http.delete(`http://localhost:5000/api/flights/${id}`)
+    this.http.delete(`http://localhost:5128/api/flights/${id}`)
       .subscribe({
         next: () => {
           this.snackBar.open('Flight removed successfully', 'Close', { duration: 2500 });
@@ -124,7 +124,7 @@ export class FlightsList implements OnInit, OnDestroy {
   cancelFlight(id: number) {
     if (!confirm('Are you sure you want to cancel this flight?')) return;
 
-    this.http.patch(`http://localhost:5000/api/flights/${id}/cancel`, {})
+    this.http.patch(`http://localhost:5128/api/flights/${id}/cancel`, {})
       .subscribe({
         next: () => {
           this.snackBar.open('Flight cancelled successfully', 'Close', { duration: 2500 });
@@ -139,7 +139,7 @@ export class FlightsList implements OnInit, OnDestroy {
   }
 
   loadFlights(checkStatusOnly: boolean = false) {
-    this.http.get<any>(`http://localhost:5000/api/flights?ts=${Date.now()}`)
+    this.http.get<any>(`http://localhost:5128/api/flights?ts=${Date.now()}`)
       .subscribe(response => {
 
         console.log('API Response:', response);

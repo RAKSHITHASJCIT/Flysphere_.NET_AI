@@ -115,7 +115,7 @@ export class ReviewComponent implements OnInit {
 
   console.log('🚀 Sending booking payload:', payload);
 
-  this.http.post('http://localhost:5000/api/bookings', payload)
+  this.http.post('http://localhost:5128/api/bookings', payload)
     .subscribe({
       next: (response: any) => {
         console.log('✅ Booking API response:', response);

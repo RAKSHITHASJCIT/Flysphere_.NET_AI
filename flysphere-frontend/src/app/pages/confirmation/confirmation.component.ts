@@ -57,7 +57,7 @@ export class ConfirmationComponent implements OnInit {
 
     this.bookingId = bookingIdParam;
 
-    this.http.get(`http://localhost:5000/api/bookings/${this.bookingId}`)
+    this.http.get(`http://localhost:5128/api/bookings/${this.bookingId}`)
       .subscribe({
         next: (response: any) => {
 
@@ -84,7 +84,7 @@ export class ConfirmationComponent implements OnInit {
     if (!this.bookingData?.bookingId) return;
 
     this.http.get(
-      `http://localhost:5000/api/tickets/${this.bookingData.bookingId}/pdf`,
+      `http://localhost:5128/api/tickets/${this.bookingData.bookingId}/pdf`,
       { responseType: 'blob' }
     ).subscribe({
       next: (blob: Blob) => {
